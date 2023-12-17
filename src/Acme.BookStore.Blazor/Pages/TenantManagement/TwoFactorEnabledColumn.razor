@@ -1,0 +1,18 @@
+﻿@using AutoMapper.Internal.Mappers
+@using Volo.Abp.Identity
+@using Volo.Abp.TenantManagement
+
+<Switch TValue="bool" @bind-Checked="@TwoFactorEnabled"></Switch>
+@code {
+    [Parameter]
+    public object? Data { get; set; }
+
+    public bool TwoFactorEnabled { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        TwoFactorEnabled = true;
+    }
+
+}
